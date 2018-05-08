@@ -27,7 +27,7 @@ public class MybatisConfig {
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sfb = new SqlSessionFactoryBean();
         sfb.setDataSource(dataSource);
-        sfb.setTypeAliasesPackage("com.zxc.ouer.entity");
+//        sfb.setTypeAliasesPackage("com.zxc.ouer.entity");
         sfb.setMapperLocations(
                 new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*Mapper.xml"));
         return sfb.getObject();

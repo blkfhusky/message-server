@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author ganglun
@@ -13,7 +14,8 @@ import javax.persistence.Id;
  */
 @Data
 @NoArgsConstructor
-public class OuerForbidden {
+@Table(name = "ouer_forbidden")
+public class Forbidden {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +27,7 @@ public class OuerForbidden {
     private Byte handleTag;
     private Byte deleteTag;
 
-    public OuerForbidden(String robotName, String friendName, String wxId, String phone) {
+    public Forbidden(String robotName, String friendName, String wxId, String phone) {
         this.robotName = robotName;
         this.friendName = friendName;
         this.wxId = wxId;

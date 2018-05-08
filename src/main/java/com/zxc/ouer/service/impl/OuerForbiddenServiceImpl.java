@@ -1,6 +1,6 @@
 package com.zxc.ouer.service.impl;
 
-import com.zxc.ouer.entity.OuerForbidden;
+import com.zxc.ouer.entity.Forbidden;
 import com.zxc.ouer.mapper.OuerForbiddenMapper;
 import com.zxc.ouer.plugin.ExcelHelper;
 import com.zxc.ouer.service.OuerForbiddenService;
@@ -26,16 +26,16 @@ public class OuerForbiddenServiceImpl implements OuerForbiddenService {
     @Override
     public void init(String path) {
         try {
-            List<OuerForbidden> ouerForbiddens = excelHelper.read(
+            List<Forbidden> forbiddens = excelHelper.read(
                     FileUtil.readFile(path));
-            ouerForbiddenMapper.insertBatch(ouerForbiddens);
+            ouerForbiddenMapper.insertBatch(forbiddens);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public List<OuerForbidden> list() {
+    public List<Forbidden> list() {
         return ouerForbiddenMapper.selectAll();
     }
 }

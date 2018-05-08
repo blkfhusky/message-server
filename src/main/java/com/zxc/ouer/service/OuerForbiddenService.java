@@ -1,6 +1,6 @@
 package com.zxc.ouer.service;
 
-import com.zxc.ouer.entity.OuerForbidden;
+import com.zxc.ouer.entity.Forbidden;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ public interface OuerForbiddenService {
 
     void init(String path);
 
-    List<OuerForbidden> list();
+    List<Forbidden> list();
 }

@@ -1,6 +1,6 @@
 package com.zxc.ouer.controller;
 
-import com.zxc.ouer.entity.OuerForbidden;
+import com.zxc.ouer.entity.Forbidden;
 import com.zxc.ouer.service.OuerForbiddenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +27,7 @@ public class ForbiddenController {
     }
 
     @RequestMapping("/list")
-    public List<OuerForbidden> list() {
+    public List<Forbidden> list() {
         return ouerForbiddenService.list();
     }
 }

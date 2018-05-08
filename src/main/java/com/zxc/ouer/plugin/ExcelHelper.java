@@ -1,6 +1,6 @@
 package com.zxc.ouer.plugin;
 
-import com.zxc.ouer.entity.OuerForbidden;
+import com.zxc.ouer.entity.Forbidden;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -18,8 +18,8 @@ import java.util.List;
 @Component
 public class ExcelHelper {
 
-    public List<OuerForbidden> read(File file) {
-        LinkedList<OuerForbidden> ouerForbiddens = new LinkedList<>();
+    public List<Forbidden> read(File file) {
+        LinkedList<Forbidden> forbiddens = new LinkedList<>();
         Workbook workbook = null;
         try {
             workbook = WorkbookFactory.create(file);
@@ -31,14 +31,14 @@ public class ExcelHelper {
         int lastRowNum = sheet.getLastRowNum();
         for (int i = firstRowNum + 1; i < lastRowNum; i++) {
             Row row = sheet.getRow(i);
-            ouerForbiddens.add(new OuerForbidden(
+            forbiddens.add(new Forbidden(
                     row.getCell(0).toString(),
                     row.getCell(1).toString(),
                     row.getCell(2).toString(),
                     row.getCell(3).toString()));
 
         }
-        return ouerForbiddens;
+        return forbiddens;
     }
 
 }

@@ -1,7 +1,7 @@
 package com.zxc.ouer.mapper;
 
 
-import com.zxc.ouer.entity.OuerForbidden;
+import com.zxc.ouer.entity.Forbidden;
 import com.zxc.ouer.util.MyMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2018/5/8
  */
 @Mapper
-public interface OuerForbiddenMapper extends MyMapper<OuerForbidden> {
+public interface OuerForbiddenMapper extends MyMapper<Forbidden> {
 
-    int insertBatch(List<OuerForbidden> ouerForbiddens);
+    int insertBatch(List<Forbidden> forbiddens);
 }
