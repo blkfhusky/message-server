@@ -20,15 +20,15 @@ public class OuerForbidden {
     private Long id;
     private String robotName;
     private String friendName;
-    private String wechatId;
+    private String wxId;
     private String phone;
-    private Integer handleTag;
-    private Integer deleteTag;
+    private Byte handleTag;
+    private Byte deleteTag;
 
-    public OuerForbidden(String robotName, String friendName, String wechatId, String phone) {
+    public OuerForbidden(String robotName, String friendName, String wxId, String phone) {
         this.robotName = robotName;
         this.friendName = friendName;
-        this.wechatId = wechatId;
+        this.wxId = wxId;
         this.phone = phone;
     }
 

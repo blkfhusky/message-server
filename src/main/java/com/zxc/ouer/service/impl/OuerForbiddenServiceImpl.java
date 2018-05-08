@@ -24,10 +24,10 @@ public class OuerForbiddenServiceImpl implements OuerForbiddenService {
     private ExcelHelper excelHelper;
 
     @Override
-    public void init() {
+    public void init(String path) {
         try {
             List<OuerForbidden> ouerForbiddens = excelHelper.read(
-                    FileUtil.readFile("D:\\temp\\1.xlsx"));
+                    FileUtil.readFile(path));
             ouerForbiddenMapper.insertBatch(ouerForbiddens);
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,6 +36,6 @@ public class OuerForbiddenServiceImpl implements OuerForbiddenService {
 
     @Override
     public List<OuerForbidden> list() {
-        return null;
+        return ouerForbiddenMapper.selectAll();
     }
 }

@@ -5,7 +5,7 @@
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="robot_name" property="robotName" jdbcType="VARCHAR"/>
         <result column="friend_name" property="friendName" jdbcType="VARCHAR"/>
-        <result column="wechat_id" property="wechatId" jdbcType="VARCHAR"/>
+        <result column="wx_id" property="wxId" jdbcType="VARCHAR"/>
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
         <result column="handle_tag" property="handleTag" jdbcType="TINYINT"/>
         <result column="delete_tag" property="deleteTag" jdbcType="TINYINT"/>
@@ -18,12 +18,12 @@
 
     <insert id="insertBatch" parameterType="java.util.List">
         insert into ouer_forbidden
-        (robot_name, friend_name, wechat_id, phone)
+        (robot_name, friend_name, wx_id, phone)
         values
         <foreach collection="list" item="item" separator=",">
             (#{item.robotName},
             #{item.friendName},
-            #{item.wechatId},
+            #{item.wxId},
             #{item.phone})
         </foreach>
 
