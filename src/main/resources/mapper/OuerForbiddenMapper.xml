@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxc.ouer.mapper.OuerForbiddenMapper">
+    <resultMap id="BaseResultMap" type="com.zxc.ouer.entity.OuerForbidden">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="robot_name" property="robotName" jdbcType="VARCHAR"/>
+        <result column="friend_name" property="friendName" jdbcType="VARCHAR"/>
+        <result column="wechat_id" property="wechatId" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="handle_tag" property="handleTag" jdbcType="TINYINT"/>
+        <result column="delete_tag" property="deleteTag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+		id, robot_name, friend_name, wechat_id,
+		phone, handle_tag, delete_tag
+	</sql>
+
+    <insert id="insertBatch" parameterType="java.util.List">
+        insert into ouer_forbidden
+        (robot_name, friend_name, wechat_id, phone)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.robotName},
+            #{item.friendName},
+            #{item.wechatId},
+            #{item.phone})
+        </foreach>
+
+    </insert>
+
+
+</mapper>
